@@ -19,5 +19,4 @@ public class ReadyMainFragment extends Fragment {
 
         return rootView;
     }
-
 }

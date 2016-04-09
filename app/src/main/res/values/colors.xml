@@ -5,8 +5,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- READY MAIN FRAGMENT PROPERTIES -->
-    <color name="ready_backgroud">#FFFFFF</color>
+    <color name="ready_background">#FFFFFF</color>
     <color name="ready_button">#FF4D4D</color>
+    <color name="ready_button_pressed">#dc413f</color>
 
     <!-- NAVIAGATION PROPERTIES -->
     <color name="list_item_title">#fff</color>

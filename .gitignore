@@ -6,4 +6,8 @@
 .DS_Store
 /build
 /captures
+<<<<<<< HEAD
 .idea/misc.xml
+=======
+/.idea
+>>>>>>> a50eafa21f7967d37605790304056fa9e51dabc5

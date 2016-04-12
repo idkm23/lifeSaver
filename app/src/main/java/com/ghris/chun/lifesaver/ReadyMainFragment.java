@@ -1,7 +1,9 @@
 package com.ghris.chun.lifesaver;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
@@ -21,7 +23,9 @@ import java.util.concurrent.TimeUnit;
 public class ReadyMainFragment extends Fragment implements View.OnTouchListener {
     private TextView counter_textview;
     private Button ready;
-    private static final String FORMAT = "%02d:%02d";
+    private static final String FORMAT = "%d:%02d";
+    private CountDownTimer timer;
+    private boolean ticking = false;
     private int seconds , minutes;
 
     @Override
@@ -31,28 +35,6 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
         View rootView = inflater.inflate(R.layout.ready_main_fragment, container, false);
         counter_textview = (TextView) rootView.findViewById(R.id.countdown_clock);
         ready = (Button) rootView.findViewById(R.id.ready_button);
-
-        /*
-        * Start counting when user hit the button
-        * //todo: Fix the time clock for not to collapse with another activity when changing fragments
-        * */
-        ready.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new CountDownTimer(300000, 1000) { // adjust the milli seconds here
-                    public void onTick(long millisUntilFinished) {
-                        counter_textview.setText("" + String.format(FORMAT,
-                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
-                                TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
-                                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
-                    }
-
-                    public void onFinish() {
-                        counter_textview.setText("done!");
-                    }
-                }.start();
-            }
-        });
         rootView.findViewById(R.id.ready_button).setOnTouchListener(this);
 
         return rootView;
@@ -69,16 +51,51 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
 
         switch(event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.d("lifeSaver", "pressed: " + R.color.ready_button_pressed);
-                v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_pressed), PorterDuff.Mode.SRC);
+                if(ticking)
+                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_cancel_pressed), PorterDuff.Mode.SRC);
+                else
+                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_ready_pressed), PorterDuff.Mode.SRC);
+
                 break;
             case MotionEvent.ACTION_UP:
-                Log.d("lifeSaver", "released: " + v.getClass().getName());
-                v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button), PorterDuff.Mode.SRC);
+                if(ticking)
+                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_ready), PorterDuff.Mode.SRC);
+                else
+                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_cancel), PorterDuff.Mode.SRC);
+
+                toggleTimer();
                 break;
         }
 
         return false;
+    }
+
+    public void toggleTimer() {
+        if(timer == null) {
+            timer = new CountDownTimer(180000, 100) { // adjust the milli seconds here
+                public void onTick(long millisUntilFinished) {
+                    counter_textview.setText(String.format(FORMAT,
+                            TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
+                            TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+                                    TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
+                }
+
+                public void onFinish() {
+                    counter_textview.setText("-:--");
+                }
+            };
+        }
+
+        if(ticking) {
+            ready.setText(getString(R.string.ready_button_ready));
+            ticking = false;
+            timer.cancel();
+            counter_textview.setText("3:00");
+        } else {
+            ready.setText(getString(R.string.ready_button_cancel));
+            ticking = true;
+            timer.start();
+        }
     }
 
 }

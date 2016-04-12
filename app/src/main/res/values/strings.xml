@@ -2,7 +2,8 @@
     <string name="app_name">LifeSaver</string>
 
     <!-- STRINGS FOR READY MAIN -->
-    <string name="ready_button">READY</string>
+    <string name="ready_button_ready">READY</string>
+    <string name="ready_button_cancel">CANCEL</string>
     <string name="ready_gretting_message">LIFE SAVER</string>
 
     <!-- STRINGS FOR NAVIGATION -->

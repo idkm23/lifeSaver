@@ -5,16 +5,18 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- READY MAIN FRAGMENT PROPERTIES -->
-    <color name="ready_background">#FFFFFF</color>
-    <color name="ready_button">#FF4D4D</color>
-    <color name="ready_button_pressed">#dc413f</color>
+    <color name="ready_background">#111</color>
+    <color name="ready_button_ready">#5aca4e</color>
+    <color name="ready_button_ready_pressed">#49b345</color>
+    <color name="ready_button_cancel">#ca504e</color>
+    <color name="ready_button_cancel_pressed">#b34745</color>
 
     <!-- NAVIAGATION PROPERTIES -->
     <color name="list_item_title">#fff</color>
-    <color name="list_background">#303030</color>
+    <color name="list_background">#505</color>
     <color name="list_background_pressed">#992416</color>
     <color name="list_divider">#272727</color>
-    <color name="counter_text_bg">#626262</color>
-    <color name="counter_text_color">#c5c4c4</color>
+    <color name="counter_text_bg">#eee</color>
+    <color name="counter_text_color">#eee</color>
 
 </resources>

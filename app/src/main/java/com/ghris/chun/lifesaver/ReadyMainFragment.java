@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -51,34 +52,31 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
         navButton = (ImageView) rootView.findViewById(R.id.nav_button);
         infoButton = (ImageView) rootView.findViewById(R.id.info_button);
 
-        // set on click for those view
-        navButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                // Change to Nav -- Menu State state
-                // Adapter object must stay inside onclick
-                // Cannot create global Adapter or Static Adapter
-
-//                Fragment menu = new MenuFragment();
-//                FragmentManager fm = getFragmentManager();
-//                android.support.v4.app.FragmentTransaction transaction = fm.beginTransaction();
-//                transaction.replace(R.id.ready_main, menu);
-//                transaction.commit();
-
-                // Todo: Change State -- My way messed up - Hung
-            }
-        });
-
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Change to info state
-                MainFragmentPagerAdapter adapter = new MainFragmentPagerAdapter(getFragmentManager());
-                adapter.getItem(MainFragmentPagerAdapter.INFO_POS);
+                MainActivity.instance.setCurrentFragment(MainFragmentPagerAdapter.INFO_POS);
+            }
+        });
+
+        navButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Change to info state
+                MainActivity.instance.setCurrentFragment(MainFragmentPagerAdapter.MENU_POS);
             }
         });
 
         return rootView;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(timer != null) {
+            timer.cancel();
+        }
     }
 
     @Override
@@ -113,7 +111,7 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
 
     public void toggleTimer() {
         if(timer == null) {
-            timer = new CountDownTimer(180000, 100) { // adjust the milli seconds here
+            timer = new CountDownTimer(18000, 100) { // adjust the milli seconds here
                 public void onTick(long millisUntilFinished) {
                     counter_textview.setText(String.format(FORMAT,
                             TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
@@ -122,25 +120,28 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
                 }
 
                 public void onFinish() {
-                    // counter_textview.setText("-:--");
-                    new AlertDialog.Builder(getContext())
-                            .setTitle("On Hold!")
-                            .setMessage("Are you good? Do you want to hold another 3 mins?")
-                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    // continue with delete
-                                    timer.onTick(180000);
-                                }
-                            })
-                            .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    // do nothing
-                                    //// TODO: 4/14/2016 Add state for the "Sending SMS"
 
-                                }
-                            })
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
+                    MainActivity.instance.initiateFinalCountdown();
+
+//                    // counter_textview.setText("-:--");
+//                    new AlertDialog.Builder(getContext())
+//                            .setTitle("On Hold!")
+//                            .setMessage("Are you good? Do you want to hold another 3 mins?")
+//                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    // continue with delete
+//                                    timer.onTick(180000);
+//                                }
+//                            })
+//                            .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    // do nothing
+//                                    //// TODO: 4/14/2016 Add state for the "Sending SMS"
+//
+//                                }
+//                            })
+//                            .setIcon(android.R.drawable.ic_dialog_alert)
+//                            .show();
                 }
             };
         }

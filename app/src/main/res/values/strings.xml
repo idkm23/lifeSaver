@@ -5,12 +5,29 @@
     <string name="ready_button_ready">READY</string>
     <string name="ready_button_cancel">CANCEL</string>
     <string name="ready_gretting_message">LIFE SAVER</string>
+    <string name="timer_duration">1:00</string>
 
     <!-- STRINGS FOR NAVIGATION -->
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
+
+    <!-- STRINGS FOR THE INFO PAGE -->
+    <string name="info">
+        <ol>
+            <li>We are not affiliated with law enforcement\n\n</li>
+
+            <li>
+                A person is protected from arrest and prosecution if they are reporting an overdose via 911, see:
+                <a href="http://www.drugpolicy.org/resource/911-good-samaritan-laws-preventing-overdose-deaths-saving-lives">Good Samaritan 911</a>
+                \n\n
+            </li>
+
+            <li>While we encourage abstinence, your safety is our only priority\n\n</li>
+
+        </ol>
+    </string>
 
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

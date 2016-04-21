@@ -39,7 +39,7 @@ public class MainActivity extends FragmentActivity {
             Button ready_button = (Button) findViewById(R.id.ready_button);
             ready_button.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_ready), PorterDuff.Mode.SRC);
             ready_button.setText(getString(R.string.ready_button_cancel));
-            ((TextView) findViewById(R.id.countdown_clock)).setText("3:00");
+            ((TextView) findViewById(R.id.countdown_clock)).setText("1:00");
         }
     }
 

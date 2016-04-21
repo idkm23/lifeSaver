@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -28,6 +29,7 @@ public class FinalTimerActivity extends FragmentActivity implements View.OnTouch
     public TextView counter_textview;
     private CountDownTimer shortTimer;
     private boolean leftInstance;
+    private MediaPlayer beepSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,10 @@ public class FinalTimerActivity extends FragmentActivity implements View.OnTouch
         setContentView(R.layout.final_timer_main);
         leftInstance = false;
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        Log.d("lifeSaver", "created");
+
+        beepSound = MediaPlayer.create(this, R.raw.beep);
+        beepSound.setLooping(true);
+        beepSound.start();
     }
 
     @Override
@@ -56,6 +61,7 @@ public class FinalTimerActivity extends FragmentActivity implements View.OnTouch
     public void onPause() {
         super.onPause();
         shortTimer.cancel();
+        beepSound.stop();
         leftInstance = true;
     }
 
@@ -78,7 +84,7 @@ public class FinalTimerActivity extends FragmentActivity implements View.OnTouch
         }
 
 
-        shortTimer = new CountDownTimer(15000, 100) { // adjust the milli seconds here
+        shortTimer = new CountDownTimer(16000, 100) { // adjust the milli seconds here
             public void onTick(long millisUntilFinished) {
                 counter_textview.setText(String.format("%d:%02d",
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),

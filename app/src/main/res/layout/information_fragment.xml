@@ -7,7 +7,7 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="INFO"
+        android:text="FACTS"
         android:textColor="#fff"
         android:textSize="35sp"
         android:textAlignment="center"
@@ -21,7 +21,7 @@
         android:textColor="#fff"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:text="Lorem ipsum dolor sit amet, consec adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        android:text="@string/info"
         />
 
 </LinearLayout>

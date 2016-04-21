@@ -111,7 +111,7 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
 
     public void toggleTimer() {
         if(timer == null) {
-            timer = new CountDownTimer(18000, 100) { // adjust the milli seconds here
+            timer = new CountDownTimer(60000, 100) { // adjust the milli seconds here
                 public void onTick(long millisUntilFinished) {
                     counter_textview.setText(String.format(FORMAT,
                             TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
@@ -150,7 +150,7 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
             ready.setText(getString(R.string.ready_button_ready));
             ticking = false;
             timer.cancel();
-            counter_textview.setText("3:00");
+            counter_textview.setText(getString(R.string.timer_duration));
         } else {
             ready.setText(getString(R.string.ready_button_cancel));
             ticking = true;

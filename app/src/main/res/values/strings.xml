@@ -29,26 +29,85 @@
         </ol>
     </string>
 
-    <!-- Nav Drawer Menu Items -->
-    <string-array name="nav_drawer_items">
-        <item >Home</item>
-        <item >Find People</item>
-        <item >Photos</item>
-        <item >Communities</item>
-        <item >Pages</item>
-        <item >What\'s Hot</item>
-    </string-array>
+    <!-- STRINGS FOR LISTS -->
+    <string name="detox_list"><b>McLean Hospital Alcohol and Drug Abuse Treatment</b>
+        \n115 Mill Street Belmont, MA 02478
+        \nIntake: <a href="tel:8003330338"> (800) 333-0338</a>\n
+        \n<b>Boston Public Health Commission Addiction Services</b>
+        \n723 Massachusetts Avenue Boston, MA 02118
+        \nIntake: <a href="tel:6175345554"> (617) 534-5554</a>\n
+        \n<b>CAB Boston Treatment Center</b>
+        \n784 Rear Massachusetts Avenue Boston, MA 02118
+        \nIntake: <a href="tel:8007635363"> (800) 763-5363</a>\n
+        \n<b>Dimock Community Health Center Alcohol and Drug Detoxification Prog</b>
+        \n41 Dimock Street Boston, MA 02119
+        \nIntake: <a href="tel:6174428800"> (617) 442-8800</a> ext: 1312\n
+        \n<b>Addiction Treatment Center of New England</b>
+        \n77 Warren Street Brighton, MA 02135
+        \nIntake: <a href="tel:6172541271"> (617) 254-1271</a> ext: 126\n
+        \n<b>Saint Elizabeths Comprehensive Addiction Program</b>
+        \n736 Cambridge Street Brighton, MA 02135
+        \nIntake: <a href="tel:6175625370"> (617) 562-5370</a>\n
+        \n<b>Brockton Addiction Treatment Center</b>
+        \n940 Belmont Street Building 60 Brockton, MA 02301
+        \nHotline: <a href="8003275050"> (800) 327-5050</a>\n
+        \n<b>CAB Health and Recovery Services Inc Residential Adolescent Program</b>
+        \n111 Middleton Road Danvers, MA 01923
+        \nIntake: <a href="tel:9787772121"> (978) 777-2121</a> ext: 650\n
+        \n<b>Saint Annes Hospital Lifeline/Methadone Services</b>
+        \n795 Middle Street Fall River, MA 02721
+        \nIntake: <a href="tel:5086745600"> (508) 674-5600</a> ext: 2260\n
+        \n<b>Stanley Street Treatment and Resources Alcoholism/Drug Detox Program</b>
+        \n386 Stanley Street Fall River, MA 02720
+        \nIntake: <a href="tel:5083247763"> (508) 324-7763</a> ext: 1\n
+        \n<b>Gosnold Treatment Center</b>
+        \n200 Ter Heun Drive Falmouth, MA 02541
+        \nIntake: <a href="tel:8004441554"> (800) 444-1554</a>\n
+        \n<b>Caritas Good Samaritan Hospital Norcap Lodge</b>
+        \n71 Walnut Street Foxboro, MA 02035
+        \nIntake: <a href="tel:8003312900"> (800) 331-2900</a>\n
+        \n<b>Spectrum Health Systems Inc</b>
+        \n214 Howard Street Framingham, MA 01701
+        \nIntake: <a href="tel:5088755801"> (508) 875-5801</a>\n
+        \n<b>Spectrum Health Systems (Male Only)</b>
+        \n861 Main Street, First Floor, Weymouth, MA
+        \nIntake: <a href="tel:8003667732"> (800) 366-7732</a>\n
+        \n<b>Spectrum Health Systems (Co-Ed)</b>
+        \n154 Oak Street, Westborough, MA
+        \nIntake: <a href="tel:8003667732"> (800) 366-7732</a>\n
+        \n<b>Providence Behavioral Health Hospital Substance Abuse and Pathways Program</b>
+        \n1223 Main Street Holyoke, MA 01040
+        \nIntake: <a href="tel:4135392973"> (413) 539-2973</a>\n
+        \n<b>Faulkner Hospital Addiction Recovery Program</b>
+        \n1153 Centre Street Jamaica Plain, MA 02130
+        \nIntake: <a href="tel:6179837712"> (617) 983-7712</a>\n
+        \n<b>Spectrum Health Systems Inc Spectrum Outpatient Services</b>
+        \n200 East Main Street Milford, MA 01757
+        \nIntake: <a href="tel:5088543320"> (508) 854-3320</a> ext: 161\n
+        \n<b>Community Healthcare Inc Community Substance Abuse Centers</b>
+        \n297 Pleasant Street Northampton, MA 01060
+        \nIntake: <a href="tel:4137460051"> (413) 746-0051</a>\n
+        \n<b>Berkshire Medical Center/Hillcrest Campus Thomas W McGee Unit</b>
+        \n165 Tor Court Pittsfield, MA 01201
+        \nIntake: <a href="tel:4134421400"> (413) 442-1400</a>\n
+        \n<b>High Point Treatment Center Inc Detoxification Program</b>
+        \n1233 State Road Plymouth, MA 02360
+        \nIntake: <a href="tel:5082247701"> (508) 224-7701</a> ext: 158\n
+        \n<b>Bay Cove Human Services Bridge to Recovery Detoxification (Andrew House)</b>
+        \nLong Island Health Campus Administration Building Quincy, MA 02169
+        \nIntake: <a href="tel:6174719600"> (617) 471-9600</a>\n
+        \n<b>Baystate Medical Center ADSCarlson Recovery Center</b>
+        \n471 Chestnut Street Springfield, MA 01199
+        \nIntake: <a href="tel:4137945555"> (413) 794-5555</a>\n
+        \n<b>Lowell Community Health Center Inc Behavioral Health Services Inpatient</b>
+        \nTewksbury Hospital 365 East Street Dietary Rehab Bldg Tewksbury, MA 01876
+        \nIntake: <a href="tel:9788580532"> (978) 858-0532</a>\n
+        \n<b>Adcare Hospital of Worcester Inc</b>
+        \n107 Lincoln Street Worcester, MA 01605
+        \nIntake: <a href="tel:8003453552"> (800) 345-3552</a> ext: 4300\n
+        \n<b>Community Healthlink Inc Detoxification Program</b>
+        \n68 Jacques Avenue Worcester, MA 01610
+        \nIntake: <a href="tel:8007509009"> (800) 750-9009</a>
+    </string>
 
-    <!-- Nav Drawer List Item Icons -->
-    <!-- Keep them in order as the titles are in -->
-    <array name="nav_drawer_icons">
-        <item>@drawable/ic_home</item>
-        <item>@mipmap/ic_people</item>
-        <item>@drawable/ic_photos</item>
-        <item>@mipmap/ic_communities</item>
-        <item>@mipmap/ic_pages</item>
-    </array>
-
-    <!-- Content Description -->
-    <string name="desc_list_item_icon">Item Icon</string>
 </resources>

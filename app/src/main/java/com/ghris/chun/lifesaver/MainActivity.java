@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +17,7 @@ public class MainActivity extends FragmentActivity {
     private ViewPager viewPager;
     private MainFragmentPagerAdapter mAdapter;
     private Boolean unpausing;
+    private static String phoneNumber = "tel:2124797990";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,5 +63,17 @@ public class MainActivity extends FragmentActivity {
     public void initiateFinalCountdown() {
         Intent k = new Intent(MainActivity.this, FinalTimerActivity.class);
         startActivity(k);
+    }
+
+    public void initiateEmergencyContact() {
+        Intent k = new Intent(MainActivity.this, EmergencyContactActivity.class);
+        startActivity(k);
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = "tel:" + phoneNumber;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 }

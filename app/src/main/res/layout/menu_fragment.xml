@@ -23,7 +23,8 @@
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
             android:paddingTop="5dip"
-            android:layout_margin="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:gravity="center_horizontal"
             android:layout_below="@+id/connect_help"
             android:layout_width="match_parent"
@@ -36,16 +37,16 @@
             android:layout_marginTop="0dp"
             android:textSize="21sp"
             android:textColor="#fff"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
+            android:padding="25dp"
             android:textAlignment="center"
-            android:text="Option 1"
-            />
+            android:text="Set Emergency Contact"
+            android:id="@+id/emergencyContact" />
 
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
             android:paddingTop="5dip"
-            android:layout_margin="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:gravity="center_horizontal"
             android:layout_below="@+id/connect_help"
             android:layout_width="match_parent"
@@ -58,16 +59,16 @@
             android:layout_marginTop="0dp"
             android:textSize="21sp"
             android:textColor="#fff"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
+            android:padding="25dp"
             android:textAlignment="center"
-            android:text="Option 2"
+            android:text="Set Timer"
             />
 
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
             android:paddingTop="5dip"
-            android:layout_margin="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:gravity="center_horizontal"
             android:layout_below="@+id/connect_help"
             android:layout_width="match_parent"
@@ -80,16 +81,16 @@
             android:layout_marginTop="0dp"
             android:textSize="21sp"
             android:textColor="#fff"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
+            android:padding="25dp"
             android:textAlignment="center"
-            android:text="Option 3"
+            android:text="Detox Centers"
             />
 
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
             android:paddingTop="5dip"
-            android:layout_margin="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:gravity="center_horizontal"
             android:layout_below="@+id/connect_help"
             android:layout_width="match_parent"
@@ -102,16 +103,16 @@
             android:layout_marginTop="0dp"
             android:textSize="21sp"
             android:textColor="#fff"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
+            android:padding="25dp"
             android:textAlignment="center"
-            android:text="Option 4"
+            android:text="Needle Exchange Programs"
             />
 
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
             android:paddingTop="5dip"
-            android:layout_margin="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:gravity="center_horizontal"
             android:layout_below="@+id/connect_help"
             android:layout_width="match_parent"

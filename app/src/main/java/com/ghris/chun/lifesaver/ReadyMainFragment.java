@@ -35,7 +35,6 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
     private static final String FORMAT = "%d:%02d";
     private CountDownTimer timer;
     private boolean ticking = false;
-    private int seconds , minutes;
 
     // Add Image View Variable
     private ImageView navButton, infoButton;
@@ -111,7 +110,7 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
 
     public void toggleTimer() {
         if(timer == null) {
-            timer = new CountDownTimer(60000, 100) { // adjust the milli seconds here
+            timer = new CountDownTimer(6000, 100) { // adjust the milli seconds here
                 public void onTick(long millisUntilFinished) {
                     counter_textview.setText(String.format(FORMAT,
                             TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),

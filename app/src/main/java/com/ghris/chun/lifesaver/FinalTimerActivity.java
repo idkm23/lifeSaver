@@ -93,7 +93,7 @@ public class FinalTimerActivity extends FragmentActivity implements View.OnTouch
             }
 
             public void onFinish() {
-                String url = "tel:2124797990";
+                String url = MainActivity.instance.getPhoneNumber();
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(url));
 
                 if (ActivityCompat.checkSelfPermission(MainActivity.instance.getApplicationContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {

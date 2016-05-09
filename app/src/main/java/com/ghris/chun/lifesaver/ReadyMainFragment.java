@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.Image;
@@ -29,15 +30,15 @@ import java.util.zip.Inflater;
 /**
  * Created by chris on 4/1/2016.
  */
-public class ReadyMainFragment extends Fragment implements View.OnTouchListener {
+public class ReadyMainFragment extends Fragment implements View.OnClickListener {
     private TextView counter_textview;
-    private Button ready;
     private static final String FORMAT = "%d:%02d";
     private CountDownTimer timer;
     private boolean ticking = false;
 
     // Add Image View Variable
-    private ImageView navButton, infoButton;
+    private ImageView navButton, infoButton, ready;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,8 +46,8 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
 
         final View rootView = inflater.inflate(R.layout.ready_main_fragment, container, false);
         counter_textview = (TextView) rootView.findViewById(R.id.countdown_clock);
-        ready = (Button) rootView.findViewById(R.id.ready_button);
-        rootView.findViewById(R.id.ready_button).setOnTouchListener(this);
+        ready = (ImageView) rootView.findViewById(R.id.ready_button);
+        rootView.findViewById(R.id.ready_button).setOnClickListener(this);
 
         navButton = (ImageView) rootView.findViewById(R.id.nav_button);
         infoButton = (ImageView) rootView.findViewById(R.id.info_button);
@@ -79,38 +80,25 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
     }
 
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
+    public void onClick(View v) {
 
         if(v.getId() != R.id.ready_button) {
-            return false;
+            return;
         }
 
-        Log.d("lifeSaver", "" + event.getAction());
+        ImageView iv = (ImageView)v;
 
-        switch(event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                if(ticking)
-                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_cancel_pressed), PorterDuff.Mode.SRC);
-                else
-                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_ready_pressed), PorterDuff.Mode.SRC);
+        if(ticking)
+            iv.setImageResource(R.mipmap.plainbutton13);
+        else
+            iv.setImageResource(R.mipmap.redbuttonstop);
 
-                break;
-            case MotionEvent.ACTION_UP:
-                if(ticking)
-                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_ready), PorterDuff.Mode.SRC);
-                else
-                    v.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_cancel), PorterDuff.Mode.SRC);
-
-                toggleTimer();
-                break;
-        }
-
-        return false;
+        toggleTimer();
     }
 
     public void toggleTimer() {
         if(timer == null) {
-            timer = new CountDownTimer(6000, 100) { // adjust the milli seconds here
+            timer = new CountDownTimer(60000, 100) { // adjust the milli seconds here
                 public void onTick(long millisUntilFinished) {
                     counter_textview.setText(String.format(FORMAT,
                             TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
@@ -120,7 +108,7 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
 
                 public void onFinish() {
 
-                    MainActivity.instance.initiateFinalCountdown();
+                    MainActivity.instance.initiateActivity(FinalTimerActivity.class);
 
 //                    // counter_textview.setText("-:--");
 //                    new AlertDialog.Builder(getContext())
@@ -146,12 +134,10 @@ public class ReadyMainFragment extends Fragment implements View.OnTouchListener 
         }
 
         if(ticking) {
-            ready.setText(getString(R.string.ready_button_ready));
             ticking = false;
             timer.cancel();
             counter_textview.setText(getString(R.string.timer_duration));
         } else {
-            ready.setText(getString(R.string.ready_button_cancel));
             ticking = true;
             timer.start();
         }

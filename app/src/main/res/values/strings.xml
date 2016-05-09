@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">LifeSaver</string>
+    <string name="app_name">Second Chance</string>
+
+    <string name="google_app_id">striped-hold-130203</string>
+
+    <!-- STRINGS FOR ADDRESS ERRORS -->
+    <string name="service_not_available">service_not_available</string>
+    <string name="invalid_lat_long_used">invalid_lat_long_used</string>
+    <string name="no_address_found">no_address_found</string>
+    <string name="address_found">address_found</string>
+    <string name="no_location_data_provided">no_location_data_provided</string>
+    <string name="no_geocoder_available">no_geocoder_available</string>
 
     <!-- STRINGS FOR READY MAIN -->
     <string name="ready_button_ready">READY</string>
@@ -14,21 +24,13 @@
     <string name="drawer_close">Slider Menu Closed</string>
 
     <!-- STRINGS FOR THE INFO PAGE -->
-    <string name="info">
-        <ol>
-            <li>We are not affiliated with law enforcement\n\n</li>
+    <string name="info1">We are not affiliated with law enforcement</string>
 
-            <li>
-                A person is protected from arrest and prosecution if they are reporting an overdose via 911, see:
-                <a href="http://www.drugpolicy.org/resource/911-good-samaritan-laws-preventing-overdose-deaths-saving-lives">Good Samaritan 911</a>
-                \n\n
-            </li>
+    <string name="info2">A person is protected from arrest and prosecution if they are reporting an overdose via 911, see:
+        \n<a href="http://www.drugpolicy.org/resource/911-good-samaritan-laws-preventing-overdose-deaths-saving-lives">Good Samaritan Law</a></string>
 
-            <li>While we encourage abstinence, your safety is our only priority\n\n</li>
-
-        </ol>
-    </string>
-
+    <string name="info3">While we encourage abstinence, harm reduction and your safety is our only priority</string>
+    
     <!-- STRINGS FOR LISTS -->
     <string name="detox_list"><b>McLean Hospital Alcohol and Drug Abuse Treatment</b>
         \n115 Mill Street Belmont, MA 02478
@@ -108,6 +110,24 @@
         \n<b>Community Healthlink Inc Detoxification Program</b>
         \n68 Jacques Avenue Worcester, MA 01610
         \nIntake: <a href="tel:8007509009"> (800) 750-9009</a>
+    </string>
+
+    <string name="needle_list"><b>Boston Needle Exchange Program - A.H.O.P.E.</b>
+        \n723 Massachusetts Avenue, Boston, MA 02119
+        \n<a href="tel:8003832437"> (800) 383-2437</a>
+        \n<a href="http://www.bphc.org">www.bpch.org</a>
+        \n\n<b>Tapestry Harm Reduction Services</b>
+        \n1985 Main Street, Springfield, MA 01060
+        \n<a href="tel:4137336639"> (413) 733-6639</a>
+        \n<a href="http://www.tapestryhealth.org">www.tapestryhealth.org</a>
+        \n\n<b>Cambridge Cares About AIDS</b>
+        \n17 Sellers Street, Cambridge, MA 02139
+        \n<a href="tel:6176613040"> (617) 661-3040</a>
+        \n<a href="http://www.cca.org">www.ccaa.org</a>
+        \n\n<b>AIDS Support Group of Cape Cod</b>
+        \n336 Commercial St., Unit #10, Provincetown, MA 02657
+        \n<a href="tel:5084878311"> (508) 487-8311</a>
+        \n<a href="http://www.asgcc.org">www.asgcc.org</a>
     </string>
 
 </resources>

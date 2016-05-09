@@ -12,28 +12,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:id="@+id/main_ready_container">
+        android:id="@+id/main_ready_container"
+        android:background="@drawable/wood">
 
-        <Button
+        <ImageView
             android:id ="@+id/ready_button"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:text="@string/ready_button_ready"
-            android:padding="15dp"
-            android:layout_marginBottom="150dp"
-            android:background="@drawable/circle_button"
+            android:src="@mipmap/plainbutton13"
+            android:layout_marginBottom="140dp"
             android:layout_gravity="center|bottom"
         />
 
-        <TextView
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ready_gretting_message"
-            android:textSize="30sp"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center_horizontal|top" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/smalllogo2"
+            android:layout_marginTop="45dp"
+            android:layout_gravity="center_horizontal"/>
+        <!-- -->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/ready_gretting_message"-->
+            <!--android:textSize="30sp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_marginTop="60dp"-->
+            <!--android:layout_gravity="center_horizontal|top" />-->
 
         <TextView
             android:id="@+id/countdown_clock"
@@ -43,7 +53,7 @@
             android:text="@string/timer_duration"
             android:textAlignment="center"
             android:textColor="#fff"
-            android:layout_marginBottom="370dp"
+            android:layout_marginBottom="340dp"
             android:layout_gravity="center_horizontal|bottom" />
 
         <ImageButton

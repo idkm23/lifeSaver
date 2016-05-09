@@ -2,122 +2,292 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ready_background"
-    android:id="@+id/infor_frag">
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="OPTIONS"
-        android:textColor="#fff"
-        android:textSize="35sp"
-        android:textAlignment="center"
-        android:layout_marginTop="30dp"/>
+    android:id="@+id/infor_frag"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            style="?android:attr/listSeparatorTextViewStyle"
-            android:paddingTop="5dip"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:gravity="center_horizontal"
-            android:layout_below="@+id/connect_help"
+            android:layout_height="120dp"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#fff" />
-
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_marginTop="0dp"
-            android:textSize="21sp"
+            android:text="MENU"
             android:textColor="#fff"
-            android:padding="25dp"
+            android:textSize="35sp"
             android:textAlignment="center"
-            android:text="Set Emergency Contact"
-            android:id="@+id/emergencyContact" />
+            android:paddingTop="35dp"
+            android:paddingBottom="35dp"
+            android:background="@drawable/wood"/>
 
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
-            android:paddingTop="5dip"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
             android:gravity="center_horizontal"
             android:layout_below="@+id/connect_help"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#fff" />
+            android:background="#000" />
 
-        <TextView
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="0dp"
-            android:textSize="21sp"
-            android:textColor="#fff"
-            android:padding="25dp"
-            android:textAlignment="center"
-            android:text="Set Timer"
-            />
+            android:layout_height="match_parent"
+            android:background="@mipmap/plain_white_backgroudn">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-        <TextView
-            style="?android:attr/listSeparatorTextViewStyle"
-            android:paddingTop="5dip"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:gravity="center_horizontal"
-            android:layout_below="@+id/connect_help"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#fff" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="45dp">
 
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_marginTop="0dp"
-            android:textSize="21sp"
-            android:textColor="#fff"
-            android:padding="25dp"
-            android:textAlignment="center"
-            android:text="Detox Centers"
-            />
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginRight="45dp"
+                        android:id="@+id/change_contact">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@mipmap/phone"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Change Contact"
+                            android:layout_marginTop="10dp"
+                            android:textSize="14sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
 
-        <TextView
-            style="?android:attr/listSeparatorTextViewStyle"
-            android:paddingTop="5dip"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:gravity="center_horizontal"
-            android:layout_below="@+id/connect_help"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#fff" />
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/set_timer">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@mipmap/goodwatch"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Set Timer"
+                            android:layout_marginTop="10dp"
+                            android:textSize="14sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
 
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_marginTop="0dp"
-            android:textSize="21sp"
-            android:textColor="#fff"
-            android:padding="25dp"
-            android:textAlignment="center"
-            android:text="Needle Exchange Programs"
-            />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="45dp"
+                    android:id="@+id/needle_exchange">
 
-        <TextView
-            style="?android:attr/listSeparatorTextViewStyle"
-            android:paddingTop="5dip"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:gravity="center_horizontal"
-            android:layout_below="@+id/connect_help"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#fff" />
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginRight="45dp">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@mipmap/needle"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Needle Exchange"
+                            android:layout_marginTop="10dp"
+                            android:textSize="14sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/detox_centers">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@mipmap/medicaldetox"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Detox Centers"
+                            android:layout_marginTop="10dp"
+                            android:textSize="14sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginRight="45dp"
+                        android:id="@+id/edit_location">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@mipmap/lilbus"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit Location"
+                            android:layout_marginTop="10dp"
+                            android:textSize="14sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@mipmap/phone"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Change Contact"
+                            android:layout_marginTop="10dp"
+                            android:textSize="14sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+    </LinearLayout>
+
+        <!--<TextView-->
+            <!--style="?android:attr/listSeparatorTextViewStyle"-->
+            <!--android:paddingTop="5dip"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:layout_below="@+id/connect_help"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#fff" />-->
+
+        <!--<TextView-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginTop="0dp"-->
+            <!--android:textSize="21sp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:padding="25dp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:text="Set Emergency Contact"-->
+            <!--android:id="@+id/emergencyContact" />-->
+
+        <!--<TextView-->
+            <!--style="?android:attr/listSeparatorTextViewStyle"-->
+            <!--android:paddingTop="5dip"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:layout_below="@+id/connect_help"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#fff" />-->
+
+        <!--<TextView-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginTop="0dp"-->
+            <!--android:textSize="21sp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:padding="25dp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:text="Set Timer"-->
+            <!--android:id="@+id/setTimerButton"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--style="?android:attr/listSeparatorTextViewStyle"-->
+            <!--android:paddingTop="5dip"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:layout_below="@+id/connect_help"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#fff" />-->
+
+        <!--<TextView-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginTop="0dp"-->
+            <!--android:textSize="21sp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:padding="25dp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:text="Detox Centers"-->
+            <!--android:id="@+id/detoxCenterButton"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--style="?android:attr/listSeparatorTextViewStyle"-->
+            <!--android:paddingTop="5dip"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:layout_below="@+id/connect_help"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#fff" />-->
+
+        <!--<TextView-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginTop="0dp"-->
+            <!--android:textSize="21sp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:padding="25dp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:text="Needle Exchange Programs"-->
+            <!--android:id="@+id/needleButton"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--style="?android:attr/listSeparatorTextViewStyle"-->
+            <!--android:paddingTop="5dip"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:layout_below="@+id/connect_help"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#fff" />-->
 
     </LinearLayout>
 

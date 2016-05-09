@@ -10,29 +10,29 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class EmergencyContactActivity extends FragmentActivity implements View.OnTouchListener {
+public class EditLocationActivity extends FragmentActivity implements View.OnTouchListener {
 
-    EditText phoneNumberField;
-    TextView currentContact;
+    EditText locationField;
+    TextView currentLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.emergency_contact_main);
+        setContentView(R.layout.edit_location_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setupClickables();
 
-        currentContact = (TextView) findViewById(R.id.current_contact);
-        currentContact.setText(MainActivity.instance.getPhoneNumber().substring(4));
-        phoneNumberField = (EditText)findViewById(R.id.phone_number_field);
+        currentLocation = (TextView) findViewById(R.id.current_location);
+        currentLocation.setText(MainActivity.getLocation());
+        locationField = (EditText)findViewById(R.id.location_field);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if(currentContact != null) {
-            currentContact.setText(MainActivity.instance.getPhoneNumber().substring(4));
+        if(currentLocation != null) {
+            currentLocation.setText(MainActivity.getLocation());
         }
     }
 
@@ -42,7 +42,7 @@ public class EmergencyContactActivity extends FragmentActivity implements View.O
     }
 
     protected void returnToMainActivity() {
-        Intent k = new Intent(EmergencyContactActivity.this, MainActivity.class);
+        Intent k = new Intent(EditLocationActivity.this, MainActivity.class);
         startActivity(k);
     }
 
@@ -51,18 +51,18 @@ public class EmergencyContactActivity extends FragmentActivity implements View.O
 
         switch (v.getId()) {
 
-            case R.id.ok_phone_number:
-                MainActivity.instance.setPhoneNumber(phoneNumberField.getText().toString());
-                currentContact.setText(MainActivity.instance.getPhoneNumber().substring(4));
+            case R.id.ok_location:
+                MainActivity.setLocation(locationField.getText().toString());
+                currentLocation.setText(MainActivity.getLocation());
                 break;
 
-            case R.id.cancel_phone_number:
+            case R.id.cancel_location:
                 returnToMainActivity();
                 break;
 
         }
 
-        if(v.getId() != R.id.phone_number_field) {
+        if(v.getId() != R.id.location_field) {
             hideSoftKeyboard();
         }
 
@@ -78,8 +78,8 @@ public class EmergencyContactActivity extends FragmentActivity implements View.O
     }
 
     private void setupClickables() {
-        findViewById(R.id.emergency_contact_main).setOnTouchListener(this);
-        findViewById(R.id.cancel_phone_number).setOnTouchListener(this);
-        findViewById(R.id.ok_phone_number).setOnTouchListener(this);
+        findViewById(R.id.edit_location_main).setOnTouchListener(this);
+        findViewById(R.id.cancel_location).setOnTouchListener(this);
+        findViewById(R.id.ok_location).setOnTouchListener(this);
     }
 }

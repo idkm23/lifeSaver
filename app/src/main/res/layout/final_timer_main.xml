@@ -12,26 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:id="@+id/main_ready_container">
-
-        <Button
-            android:id ="@+id/final_timer_button"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:text="CANCEL"
-            android:padding="15dp"
-            android:layout_marginBottom="150dp"
-            android:background="@drawable/circle_button"
-            android:layout_gravity="center|bottom"
-        />
+        android:id="@+id/main_ready_container"
+        android:background="#f00">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FINAL COUNTDOWN"
-            android:textSize="31sp"
+            android:text="ARE YOU OKAY?"
+            android:textSize="37sp"
             android:textAlignment="center"
-            android:textColor="#f00"
+            android:fontFamily="Future Md BT"
+            android:textColor="#000"
             android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal|top" />
 
@@ -42,21 +33,19 @@
             android:layout_height="wrap_content"
             android:text="0:15"
             android:textAlignment="center"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:layout_marginBottom="370dp"
             android:layout_gravity="center_horizontal|bottom" />
-    </FrameLayout>
 
-    <!-- Listview to display slider menu -->
-    <ListView
-        android:id="@+id/list_slidermenu"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:choiceMode="singleChoice"
-        android:divider="@color/list_divider"
-        android:dividerHeight="1dp"
-        android:listSelector="@drawable/navigation_selector"
-        android:background="@color/list_background"/>
+        <ImageView
+            android:id ="@+id/final_timer_button"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@mipmap/redbuttonstop"
+            android:layout_marginBottom="140dp"
+            android:layout_gravity="center|bottom"
+            />
+
+    </FrameLayout>
 
 </android.support.v4.widget.DrawerLayout>

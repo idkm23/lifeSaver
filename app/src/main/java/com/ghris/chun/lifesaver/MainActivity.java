@@ -8,16 +8,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
 
     public static MainActivity instance;
+    private static String phoneNumber = "tel:2124797990";
+    private static String location = "no location specified";
 
     private ViewPager viewPager;
     private MainFragmentPagerAdapter mAdapter;
     private Boolean unpausing;
-    private static String phoneNumber = "tel:2124797990";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +38,8 @@ public class MainActivity extends FragmentActivity {
         super.onResume();
 
         if(unpausing) {
-            Button ready_button = (Button) findViewById(R.id.ready_button);
-            ready_button.getBackground().setColorFilter(getResources().getColor(R.color.ready_button_ready), PorterDuff.Mode.SRC);
-            ready_button.setText(getString(R.string.ready_button_cancel));
+            ImageView ready_button = (ImageView) findViewById(R.id.ready_button);
+            ready_button.setImageResource(R.mipmap.plainbutton13);
             ((TextView) findViewById(R.id.countdown_clock)).setText("1:00");
         }
     }
@@ -60,20 +61,22 @@ public class MainActivity extends FragmentActivity {
         viewPager.setCurrentItem(arg);
     }
 
-    public void initiateFinalCountdown() {
-        Intent k = new Intent(MainActivity.this, FinalTimerActivity.class);
+    public void initiateActivity(Class c) {
+        Intent k = new Intent(MainActivity.this, c);
         startActivity(k);
     }
 
-    public void initiateEmergencyContact() {
-        Intent k = new Intent(MainActivity.this, EmergencyContactActivity.class);
-        startActivity(k);
+    public static void setPhoneNumber(String phoneNumber) {
+        MainActivity.phoneNumber = "tel:" + phoneNumber;
     }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = "tel:" + phoneNumber;
-    }
-    public String getPhoneNumber() {
+    public static String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public static void setLocation(String location) {
+        MainActivity.location = location;
+    }
+    public static String getLocation() {
+        return location;
     }
 }

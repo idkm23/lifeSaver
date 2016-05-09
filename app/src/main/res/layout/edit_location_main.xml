@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/emergency_contact_main">
+    android:id="@+id/edit_location_main">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         <TextView
             android:layout_height="120dp"
             android:layout_width="match_parent"
-            android:text="Change Contact"
+            android:text="Change Location"
             android:textColor="#fff"
             android:textSize="35sp"
             android:textAlignment="center"
@@ -24,7 +24,6 @@
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
             android:gravity="center_horizontal"
-            android:layout_below="@+id/connect_help"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#000" />
@@ -45,19 +44,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Current Contact"
+                    android:text="Current Location"
                     android:layout_gravity="center_horizontal"
                     android:textSize="22sp"
                     android:layout_marginBottom="5dp"
                     android:textColor="#000"/>
 
                 <TextView
-                    android:id="@+id/current_contact"
+                    android:id="@+id/current_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6033411973"
+                    android:text="3 Acacia St. Merrimack, NH"
                     android:layout_gravity="center_horizontal"
                     android:textStyle="bold"
+                    android:textAlignment="center"
                     android:textSize="21sp"
                     android:layout_marginBottom="60dp"
                     android:textColor="#000"/>
@@ -65,20 +65,31 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Contact"
+                    android:text="New Location"
                     android:layout_gravity="center_horizontal"
                     android:textSize="22sp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="(e.g. address, first floor men's bathroom)"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="19sp"
                     android:layout_marginBottom="20dp"
                     android:textColor="#000"/>
 
                 <EditText
-                    android:id="@+id/phone_number_field"
+                    android:id="@+id/location_field"
                     android:layout_width="220dp"
                     android:layout_height="37dp"
-                    android:inputType="phone"
+                    android:inputType="text"
                     android:textSize="21sp"
                     android:textAlignment="center"
-                    android:hint="Phone Number"
+                    android:hint="Location"
+                    android:layout_gravity="center"
                     android:background="@drawable/edit_text_style"
                     android:cursorVisible="false"
                     android:layout_marginBottom="20dp"/>
@@ -96,7 +107,7 @@
                         android:textColor="#fff"
                         android:text="OK"
                         android:gravity="center"
-                        android:id="@+id/ok_phone_number"
+                        android:id="@+id/ok_location"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginRight="25dp"/>
 
@@ -107,7 +118,7 @@
                         android:textColor="#fff"
                         android:text="EXIT"
                         android:gravity="center"
-                        android:id="@+id/cancel_phone_number"
+                        android:id="@+id/cancel_location"
                         android:layout_gravity="center_horizontal"/>
 
                 </LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/location_main">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/bchance"
+        android:layout_gravity="top|center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Please Enter A Brief Description Of Your Location"
+            android:layout_gravity="center_horizontal"
+            android:textSize="26sp"
+            android:layout_marginBottom="4dp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="(e.g. address, first floor men's bathroom)"
+            android:layout_gravity="center_horizontal"
+            android:textSize="19sp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#000"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="10dp" />
+
+            <EditText
+                android:id="@+id/location_field"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:maxLength="2000"
+                android:maxLines="4"
+                android:textSize="21sp"
+                android:textAlignment="center"
+                android:hint="Location"
+                android:background="@drawable/edit_text_style"
+                android:cursorVisible="false"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/showGPS"
+                android:adjustViewBounds="true"
+                android:layout_gravity="right"
+                android:src="@mipmap/gps"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:background="#141a4e"
+            android:textColor="#fff"
+            android:text="OK"
+            android:gravity="center"
+            android:id="@+id/ok_location"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</FrameLayout>
